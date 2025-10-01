@@ -1,0 +1,162 @@
+# ===========================================
+# 123云盘开放平台工具集 - Git忽略配置
+# ===========================================
+
+# ============ 敏感配置文件 ============
+# 绝对不要提交包含API凭据的配置文件！
+config.txt
+config_*.txt
+*.conf
+.env
+.env.*
+credentials.json
+secrets.json
+
+# ============ 编辑器历史备份 ============
+# 这些目录可能包含配置文件的历史版本
+.history/
+.vscode/settings.json
+.vscode/.ropeproject
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============ Python相关 ============
+# Python字节码
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C扩展
+*.so
+
+# 分发/打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# 单元测试/覆盖率
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# ============ 日志文件 ============
+*.log
+logs/
+*.log.*
+
+# ============ 临时文件 ============
+*.tmp
+*.temp
+*.bak
+*.backup
+*~.nib
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# ============ 操作系统 ============
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.Trash-*
+
+# ============ 项目特定 ============
+# 下载的文件（如果有测试下载目录）
+downloads/
+test_downloads/
+temp/
+
+# 上传测试文件
+test_uploads/
+
+# 数据文件
+*.csv
+*.xlsx
+*.db
