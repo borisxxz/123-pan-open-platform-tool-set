@@ -19,6 +19,7 @@
 - **离线下载** (`离线下载/simple_offline_download.py`) - 创建离线下载任务，支持批量导入
 - **直链管理** (`直链/direct_link.py`) - 文件直链管理、流量监控和IP黑名单配置
 - **图床服务** (`图床/image_hosting.py`) - 图片上传、管理和CDN加速分发
+- **Markdown转换** (`Markdown的互相转换/`) - Markdown文件与123网盘互转工具集
 
 ## ⚙️ 配置说明
 
@@ -276,6 +277,42 @@ python image_hosting.py
 选择操作: 1 -> 输入目录ID -> 获得CDN链接
 ```
 
+### 7️⃣ Markdown转换
+
+**功能**：Markdown文件与123网盘互转，包含两个独立工具
+
+```bash
+cd "Markdown的互相转换"
+```
+
+**工具1：本地Markdown转123云盘在线** (`本地Markdown转123云盘在线.py`)
+- 将本地图片上传到123网盘图床
+- 将本地附件上传到123网盘直链目录
+- 自动替换Markdown文件中的链接
+
+**工具2：在线Markdown转本地** (`在线Markdown转本地.py`)
+- 下载Markdown中的外部资源到本地
+- 图片保存到 `images` 文件夹
+- 附件保存到 `attachments` 文件夹
+- 自动替换为本地引用
+
+**使用示例**：
+```bash
+# 工具1：本地转在线（需要config.txt配置）
+python "本地Markdown转123云盘在线.py" document.md
+
+# 工具2：在线转本地（需要安装requests库）
+python "在线Markdown转本地.py" -i README.md -o README_local.md
+```
+
+**典型场景**：
+- 📝 发布前：将本地Markdown转为在线版本，获得CDN加速
+- 💾 归档时：将在线Markdown转为本地版本，永久保存
+- 🔄 平台迁移：在不同Markdown平台间迁移文档
+- 👥 协作编辑：统一团队的资源管理方式
+
+**详细文档**：参见 `Markdown的互相转换/README.md`
+
 ## 📦 依赖库
 
 所有工具仅依赖一个外部库：
@@ -490,9 +527,14 @@ curl -I https://example.com/file.zip
 │   ├── 🐍 direct_link.py                  # 直链管理工具（完整功能）
 │   └── 📝 API文档.md                      # 直链相关API文档
 │
-└── 📂 图床/
-    ├── 🐍 image_hosting.py                # 图床管理工具（完整功能）
-    └── 📝 API文档.md                      # 图床相关API文档
+├── 📂 图床/
+│   ├── 🐍 image_hosting.py                # 图床管理工具（完整功能）
+│   └── 📝 API文档.md                      # 图床相关API文档
+│
+└── 📂 Markdown的互相转换/
+    ├── 🐍 本地Markdown转123云盘在线.py    # 本地转在线工具（1332行）
+    ├── 🐍 在线Markdown转本地.py           # 在线转本地工具（932行）
+    └── 📝 README.md                       # 完整使用文档
 ```
 
 **文件说明**：
@@ -519,6 +561,7 @@ curl -I https://example.com/file.zip
 - **离线下载**：`离线下载/创建离线下载任务.md`
 - **直链管理**：`直链/API文档.md`
 - **图床服务**：`图床/API文档.md`
+- **Markdown转换**：`Markdown的互相转换/README.md`
 
 ### 更新日期
 所有API文档已于 **2025-10-01** 更新，基于123云盘开放平台官方文档。
@@ -540,6 +583,13 @@ curl -I https://example.com/file.zip
 4. 测试所有修改的功能
 
 ## 📝 更新日志
+
+### v2.1 (2025-10-03)
+- ✨ 新增Markdown转换工具集
+  - 本地Markdown转123云盘在线工具
+  - 在线Markdown转本地工具
+- 📚 完善Markdown转换文档
+- 🔄 支持图片和附件的互转
 
 ### v2.0 (2025-10-01)
 - ✨ 完善所有功能模块
